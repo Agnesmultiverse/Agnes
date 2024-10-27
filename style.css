@@ -3,12 +3,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lobster', 'Permanent Marker', 'Raleway', sans-serif;
+    font-family: "Amatic SC", sans-serif;
 }
 
 body {
-    overflow-x: hidden;
+    
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400; /* Use the regular weight */
+    line-height: 1.5; /* Adjust for readability */
+    font-size: 1.5rem; /* Increase the size since Amatic SC is a decorative font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 a {
@@ -16,42 +24,133 @@ a {
     color: inherit;
 }
 
+.amatic-sc-regular {
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+        font-family: "Amatic SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .amatic-sc-bold {
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+
+
+  
+
 /* Hero Section */
+
 .hero-section {
-    background-color: #FBFFA8; /* Same as Note section */
+    background-color: #FBFFA8;
     height: 100vh;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    position: relative;
-}
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #FF38B3;
+    overflow: hidden;
 }
 
-/* Website Title */
-.hero-section h1 {
-    font-size: 3rem;
+/*.hero-title {
     position: absolute;
-    top: 20px; /* Positioned at the top center */
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    font-family: "Kablammo", sans-serif;
+    font-size: 8vw; 
+    font-weight: 700;
+    color: #FF38B3;
     text-align: center;
-    z-index: 1;
+    z-index: 0;
+    line-height: 1.1;
+    white-space: nowrap; 
+}  */
+
+.hero-title-left {
+    display: inline-block;
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    transform: translateY(-50%);
+    font-family: "Kablammo", sans-serif;
+    font-size: 8vw; /* Responsive font size */
+    font-weight: 700;
+    color: #FE78B1;
+    z-index: 2;
+    white-space: nowrap;
 }
+
+/* Right Part of the Title */
+.hero-title-right {
+    display: inline-block;
+    position: absolute;
+    top: 90%;
+    right: 2%;
+    transform: translateY(-50%);
+    font-family: "Kablammo", sans-serif;
+    font-size: 8vw; /* Responsive font size */
+    font-weight: 700;
+    color: #FE78B1;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+
+.animated-title span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: letterAnimation 1s forwards;
+    font-family: "Kablammo", sans-serif;
+    font-size: 8vw; /* Responsive font size */
+    font-weight: 700;
+    color: #FE78B1;
+}
+
+@keyframes letterAnimation {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Delay each letter appearance */
+.animated-title span:nth-child(1) { animation-delay: 0.1s; }
+.animated-title span:nth-child(2) { animation-delay: 0.2s; }
+.animated-title span:nth-child(3) { animation-delay: 0.3s; }
+.animated-title span:nth-child(4) { animation-delay: 0.4s; }
+.animated-title span:nth-child(5) { animation-delay: 0.5s; }
+.animated-title span:nth-child(6) { animation-delay: 0.6s; }
+.animated-title span:nth-child(7) { animation-delay: 0.7s; }
+.animated-title span:nth-child(8) { animation-delay: 0.8s; }
+.animated-title span:nth-child(9) { animation-delay: 0.9s; }
+.animated-title span:nth-child(10) { animation-delay: 1.0s; }
+.animated-title span:nth-child(11) { animation-delay: 1.1s; }
+.animated-title span:nth-child(12) { animation-delay: 1.2s; }
+
 
 
 /* Rotating Navigation */
 .nav-container {
-    position: relative;
+    position: absolute;
     width: 400px;
     height: 400px;
-    margin-top: 30px;
-    animation: rotate 10s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 10s linear infinite; /* Keeps the nav items rotating */
+    z-index: 0;
 }
+
 
 .nav-item {
     position: absolute;
@@ -67,15 +166,28 @@ a {
 }
 
 .nav-text {
+    display: block;
     color: #FF38B3;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400; /* Use the regular weight */
+    line-height: 1.5; /* Adjust for readability */
+    font-size: 1.5rem; /* Increase the size since Amatic SC is a decorative font */
+    text-align: center;
+    margin-top: 5px;
 }
-/* Orbital Movement for Navigation Items */
-.nav-item:nth-child(1) { top: 0; left: 50%; transform: translate(-50%, -150%); }
-.nav-item:nth-child(2) { top: 25%; left: 0; transform: translate(-150%, -50%); }
-.nav-item:nth-child(3) { top: 75%; left: 0; transform: translate(-150%, -50%); }
-.nav-item:nth-child(4) { top: 100%; left: 50%; transform: translate(-50%, 50%); }
-.nav-item:nth-child(5) { top: 75%; left: 100%; transform: translate(50%, -50%); }
-.nav-item:nth-child(6) { top: 25%; left: 100%; transform: translate(50%, -50%); }
+
+/* Updated positioning for 9 evenly spaced items */
+.nav-item:nth-child(1) { top: 5%; left: 50%; transform: translate(-50%, -100%); }
+.nav-item:nth-child(2) { top: 20%; left: 20%; transform: translate(-100%, -50%); }
+.nav-item:nth-child(3) { top: 50%; left: 5%; transform: translate(-100%, -50%); }
+.nav-item:nth-child(4) { top: 80%; left: 20%; transform: translate(-100%, -50%); }
+.nav-item:nth-child(5) { top: 95%; left: 50%; transform: translate(-50%, 0); }
+.nav-item:nth-child(6) { top: 80%; left: 80%; transform: translate(0, -50%); }
+.nav-item:nth-child(7) { top: 50%; left: 95%; transform: translate(0, -50%); }
+.nav-item:nth-child(8) { top: 20%; left: 80%; transform: translate(0, -50%); }
+.nav-item:nth-child(9) { top: 5%; left: 50%; transform: translate(-50%, -100%); }
+
+
 
 @keyframes rotate {
     from { transform: rotate(0deg); }
@@ -91,37 +203,63 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 /* Initial state for the loading effect */
 .note-content {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%; /* Full width of the container */
+    max-width: 1200px;
+    padding: 20px; /* Inner padding for spacing */
     font-size: 1.2rem;
-    line-height: 1.6;
+    line-height: 1.4;
     opacity: 0; /* Initially hidden */
-    transform: translateY(30px); /* Initially placed lower */
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
     color: #FF38B3;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    overflow: hidden; /* Prevents content overflow */
+    
 }
 
-/* When the page is loaded, the content will fade in and slide up */
 .note-content.show {
     opacity: 1;
-    transform: translateY(0); /* Moves to original position */
+    transform: translateY(0); /* Reset transform */
 }
 
-.note-content .highlight {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+/* H1 Styling within Note Content */
+.note-content h1 {
+    width: 100%; /* Occupies full width of the note-content */
+    box-sizing: border-box; /* Ensure padding doesn’t cause overflow */
+    margin: 10px 0;
+    font-size: 2rem;
+    color: #FF38B3;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    opacity: 0;
+    transform: translateX(-30px); /* Slide in from the left */
+    white-space: normal; /* Allows wrapping of text within container */
+    overflow-wrap: break-word; /* Handles long words for proper wrapping */
 }
 
-/* Optional: Add a subtle delay for child elements */
-.note-content p, .note-content .highlight {
-    transition-delay: 0.3s;
+/* Show each h1 line with staggered animation */
+.note-content.show h1:nth-of-type(1) { opacity: 1; transform: translateX(0); transition-delay: 0.2s; }
+.note-content.show h1:nth-of-type(2) { opacity: 1; transform: translateX(0); transition-delay: 0.4s; }
+.note-content.show h1:nth-of-type(3) { opacity: 1; transform: translateX(0); transition-delay: 0.6s; }
+.note-content.show h1:nth-of-type(4) { opacity: 1; transform: translateX(0); transition-delay: 0.8s; }
+.note-content.show h1:nth-of-type(5) { opacity: 1; transform: translateX(0); transition-delay: 1s; }
+.note-content.show h1:nth-of-type(6) { opacity: 1; transform: translateX(0); transition-delay: 1.2s; }
+.note-content.show h1:nth-of-type(7) { opacity: 1; transform: translateX(0); transition-delay: 1.4s; }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .note-content {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .note-content h1 {
+        font-size: 1.5rem; /* Adjust font size for mobile */
+    }
 }
+
+
 
 
 
@@ -149,8 +287,9 @@ a {
 .project-preview h2 {
     margin-top: 50px;
     font-size: 3.5rem;
-    font-family: 'McLaren', cursive;  /* Fancy font style */
-    color: #333; /* Change color for better contrast */
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400; /* Use the regular weight */
+    line-height: 1.5; /* Adjust for readability */
     text-align: center;
     opacity: 0;  /* Hidden initially */
     transform: translateY(20px);  /* Move title slightly down */
@@ -162,6 +301,7 @@ a {
 .project-preview.active h2 {
     opacity: 1;
     transform: translateY(0);  /* Slide up to original position */
+    
 }
 
 /* Optional hover effect for titles */
@@ -182,6 +322,9 @@ a {
     border-radius: 8px;
     transition: color 0.3s ease, transform 0.3s ease;
     overflow: hidden; /* Hide the overflow for fancy effects */
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400; /* Use the regular weight */
+    line-height: 1.5; /* Adjust for readability */
 }
 
 /* Fancy hover effect */
@@ -277,14 +420,20 @@ a {
 
 /* Avatar at the center (remove border-radius) */
 .avatar {
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 250px;
-    height: 350px;
     overflow: hidden;
+    margin-bottom: 450px; /* To avoid overlap with the title */
+   
+    position: absolute;
+    z-index: 10; /* Ensure it stays above the rotating items */
+    justify-content: center;
+    align-items: center;
+
+    
 }
+
 
 .avatar img {
     width: 100%;
@@ -461,7 +610,9 @@ footer p {
 }
 
 .project-title {
-    font-family: 'Lobster', cursive;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400; /* Use the regular weight */
+    line-height: 1.5; /* Adjust for readability */
     font-size: 3.5rem;
     margin: 20px;
     text-align: center;
@@ -922,16 +1073,19 @@ footer p {
 /* Image gallery styling */
 .img-gly-project6 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ensure minimum of three columns */
     gap: 20px;
-    margin-top: 30px;
-    width: 100%;
-
+    margin: 0 auto; /* Center align gallery */
+    max-width: 1200px; /* Control maximum width */
+    width: 100%; /* Full width */
+    padding: 20px;
+    justify-content: center; /* Center the grid */
 }
 
 .img-gly-project6 img {
     width: 100%;
     height: auto;
+    border-radius: 10px;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -939,58 +1093,100 @@ footer p {
     transform: scale(1.1); /* Enlarge on hover */
 }
 
-/* Responsive video for smaller screens */
+/* Responsive adjustments to maintain at least three columns */
 @media screen and (max-width: 768px) {
-    .full-width-video video {
-        height: 300px; /* Adjust the height for smaller devices */
+    .img-gly-project6 {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for smaller screens */
     }
 }
 
 
-/* Project 5 - Other Works Section */
+
+/* Project Section Styling */
 .project-details-5 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 50px;
     text-align: center;
-    padding: 40px;
-    background-color: #FAFEA9; /* Matching the background color for Project 5 */
+}
+
+/* Title and Text Content Styling for Project 5 */
+.text-content-project5 {
+    max-width: 800px;
+    margin: 0 auto 30px; /* Add margin at the bottom to separate from gallery */
+    padding: 20px;
+     border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    line-height: 1.6;
     color: #333;
 }
 
-.project-title-5 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #ff5722; /* Custom title color */
-}
-
-.image-gallery-5 {
+/* Image Gallery Styling */
+.img-gly-project5 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
     gap: 20px;
-    margin-top: 30px;
+    max-width: 100%;
+    padding: 20px;
 }
 
-.hover-image-5 {
+.img-gly-project5 img {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease;
 }
 
-.hover-image-5:hover {
+.img-gly-project5 img:hover {
     transform: scale(1.1); /* Enlarge on hover */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
-/* Responsive design for smaller screens */
-@media screen and (max-width: 768px) {
-    .project-title-5 {
-        font-size: 2rem;
-    }
+/* Video Grid Styling */
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns for the videos */
+    gap: 20px; /* Space between videos */
+    width: 100%;
+    margin-top: 20px;
+    align-items: center; /* Centers videos vertically in the row */
+}
 
-    .image-gallery-5 {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+/* Wrapper to keep the aspect ratio of the videos */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height = width * 9 / 16) */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr; /* Stack videos in one column on small screens */
     }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .text-content-project5 {
+        font-size: 1rem;
+    }
+    
+    .full-width-video iframe {
+        height: 300px; /* Adjust for smaller screens */
+    }
+}
+
+.text-content-project5{
+    margin-top: 5%;
 }
