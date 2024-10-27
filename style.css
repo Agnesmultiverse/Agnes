@@ -551,12 +551,8 @@ a {
 
 /* Hide hamburger button on desktop */
 .hamburger-button {
-    display: none !important; /* Ensures it’s hidden in all scenarios */
-    visibility: hidden; /* Hides it visually */
-    opacity: 0; /* Makes it transparent */
-    pointer-events: none; /* Prevents any interaction */
+
     position: absolute; /* Removes it from the flow */
-    z-index: -1; /* Places it behind other elements */
 }
 
 
