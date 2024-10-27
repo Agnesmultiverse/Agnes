@@ -119,5 +119,17 @@ navItems.forEach(item => {
     });
 });
 
+// JavaScript for Navbar Toggle
+document.addEventListener("DOMContentLoaded", function () {
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    // Toggle the active class on the nav menu when the toggle button is clicked
+    navToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+    });
+});
+
+
 
 
